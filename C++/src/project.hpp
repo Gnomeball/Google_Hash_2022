@@ -1,6 +1,8 @@
 #ifndef project_h
 #define project_h
 
+#include <ostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -34,6 +36,18 @@ public:
     void setAsCompleted(void);
 
     // Overrides
+     friend std::ostream &operator<<(std::ostream &os, Project project) {
+        // std::stringstream roles;
+        // for (auto r : project.roles)
+        //     roles << r << ", ";
+        os << project.name << " "
+           << "[days = " << project.days
+           << ", score = " << project.score
+           << ", dueBy = " << project.dueBy
+           << ", n_roles = " << project.roles.size() << "]";
+        // os << " [" << roles.str().substr(0, roles.str().size() - 2) << "]";
+        return os;
+    }
 };
 
 #endif // project_h

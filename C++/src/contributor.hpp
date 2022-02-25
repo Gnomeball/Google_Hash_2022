@@ -1,6 +1,8 @@
 #ifndef contributor_h
 #define contributor_h
 
+#include <ostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -24,6 +26,13 @@ public:
     // Utility Functions
 
     // Overrides
+    friend std::ostream &operator<<(std::ostream &os, Contributor contributor) {
+        std::stringstream skills;
+        for (auto s : contributor.skills)
+            skills << s << ", ";
+        os << contributor.name << " [" << skills.str().substr(0, skills.str().size() - 2) << "]";
+        return os;
+    }
 };
 
 #endif // contributor_h

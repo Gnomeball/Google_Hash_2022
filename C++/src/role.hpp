@@ -1,6 +1,7 @@
 #ifndef role_h
 #define role_h
 
+#include <ostream>
 #include <string>
 
 class Role {
@@ -25,6 +26,10 @@ public:
     void empty(void);
 
     // Overrides
+    friend std::ostream &operator<<(std::ostream &os, Role role) {
+        os << role.name << " " << role.level;
+        return os;
+    }
 };
 
 #endif // role_h

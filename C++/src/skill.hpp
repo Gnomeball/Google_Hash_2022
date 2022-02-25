@@ -1,6 +1,7 @@
 #ifndef skill_h
 #define skill_h
 
+#include <ostream>
 #include <string>
 
 class Skill {
@@ -22,6 +23,10 @@ public:
     void levelUp(void);
 
     // Overrides
+    friend std::ostream &operator<<(std::ostream &os, Skill skill) {
+        os << skill.name << " " << skill.level;
+        return os;
+    }
 };
 
 #endif // skill_h

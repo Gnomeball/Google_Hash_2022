@@ -40,13 +40,14 @@ int main(int argc, char *argv[]) {
     // * Output data, for reasons of "does it work?"
 
     std::cout << "n_contributors = " << n_contributors << "\n";
-    std::cout << "n_contributors = " << n_projects << "\n";
 
     for (auto c : contributors)
-        std::cout << c.getName() << "\n";
+        std::cout << c << "\n";
+
+    std::cout << "n_projects = " << n_projects << "\n";
 
     for (auto p : projects)
-        std::cout << p.getName() << "\n";
+        std::cout << p << "\n";
 
     // * Close the file
 
