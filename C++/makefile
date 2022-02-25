@@ -14,7 +14,7 @@ out_dir = out
 sources = $(addprefix $(src_dir)/, $(wildcard *.cpp))
 
 # ? there has to be a way to generate this automagically
-classes = hash contributor project
+classes = hash skill contributor role project
 objects = $(addprefix $(obj_dir)/, $(addsuffix .o, $(classes)))
 
 target = $(bin_dir)/hash
